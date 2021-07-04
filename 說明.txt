@@ -1,0 +1,23 @@
+Company Order Order1
+創立Dynamic Web Project
+利用WebContent/WEB-INF/lib/mysql-connector-java來跟資料庫連線
+Dao/implDao來寫連線
+public static Connection getDb()
+	{
+		String url="jdbc:mysql://localhost:3306/company";
+		String user="root";
+		String password="1234";
+		Connection conn=null;
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			conn=DriverManager.getConnection(url,user,password);
+		}catch(ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return conn;
+	}
